@@ -85,6 +85,101 @@
 	var_dump($x);
 ?>
 </div>
+<!-- 设置 PHP 常量
+设置常量，使用 define() 函数，函数语法如下：
+bool define ( string $name , mixed $value [, bool $case_insensitive = false ] )
+该函数有三个参数:
+name：必选参数，常量名称，即标志符。
+value：必选参数，常量的值。
+case_insensitive ：可选参数，如果设置为 TRUE，该常量则大小写不敏感。默认是大小写敏感的。 -->
+<?php
+  define("GREETING","欢迎访问 Runoob.com",true);
+  echo "<br>";
+  echo GREETING;
+  echo "<br>";
+  echo greeting;
+  echo "<br>";
+?>
+<!-- 常量是全局的 -->
+<?php
+	define("GREETING", "欢迎访问 Runoob.com");
+	function myTest4() {
+	    echo GREETING;
+	}
+	myTest4();    // 输出 "欢迎访问 Runoob.com"
+?>
+<!-- PHP 并置运算符
+在 PHP 中，只有一个字符串运算符。
+并置运算符 (.) 用于把两个字符串值连接起来。 -->
+<?php
+  echo "<br>";
+  $txt1="钓鱼岛";
+  $txt2="是中国的";
+  echo $txt1 . $txt2;
+?>
+<!-- PHP strlen() 函数
+有时知道字符串值的长度是很有用的。
+strlen() 函数返回字符串的长度（字符数）。 -->
+<?php
+ echo "<br>";
+ echo strlen("hello");
+?>
+<!-- PHP strpos() 函数
+strpos() 函数用于在字符串内查找一个字符或一段指定的文本。
+如果在字符串中找到匹配，该函数会返回第一个匹配的字符位置。如果未找到匹配，则返回 FALSE。 -->
+<?php 
+  echo "<br>";
+  echo strpos("hello","o");
+?>
+<!-- 三元运算符
+另一个条件运算符是"?:"（或三元）运算符 。
+语法格式
+(expr1) ? (expr2) : (expr3) 
+对 expr1 求值为 TRUE 时的值为 expr2，在 expr1 求值为 FALSE 时的值为 expr3。
+自 PHP 5.3 起，可以省略三元运算符中间那部分。表达式 expr1 ?: expr3 在 expr1 求值为 TRUE 时返回 expr1，否则返回 expr3。 
+注意：PHP_EOL 是一个换行符，兼容更大平台。
+-->
+<?php
+ $txt="user";
+ $username=isset($txt)?$txt:'nobody';
+ echo "<br>";
+ echo $username,PHP_EOL;
+?>
+<?php
+ $txt="user1";
+ $username=$txt?:'nobody';
+ echo "<br>";
+ echo $username,PHP_EOL;
+ echo "<br>";
+?>
+
+<?php
+  $t=date("H");
+  if($t<"20"){
+    echo "Have a good day!";
+  }else{
+  	echo "Have a good night!";
+  }
+?>
+
+<?php
+ $favcolor="green";
+ echo "<br>";
+ switch($favcolor){
+ 	case "red":
+ 	  echo "你喜欢的是红色";
+ 	break;
+ 	case "blue":
+ 	   echo "你喜欢的是蓝色";
+ 	break;
+ 	case "green":
+ 	   echo "你喜欢的是绿色";
+ 	break;
+    default:
+    echo "你不喜欢红色蓝色蓝色";
+ }
+?>
+
 
 <!-- 调用公共尾部 before-->
 <?php include 'footer.php'; ?>
