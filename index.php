@@ -1,4 +1,4 @@
-<!-- 调用公共头部 before-->
+<!--调用公共头部 before-->
 <?php include 'header.php'; ?>
 <!-- 调用公共头部 end-->
 
@@ -179,8 +179,96 @@ strpos() 函数用于在字符串内查找一个字符或一段指定的文本�
     echo "你不喜欢红色蓝色蓝色";
  }
 ?>
+<!-- PHP 数组 -->
+<?php
+  $cars=array(" Hi "," welcome "," come in ");
+  echo "<br>";
+  echo $cars[0] . $cars[2] . $cars[1];
+  echo "<br>";
+  echo count($cars);
+  $arrlength=count($cars);
+  for($x=0;$x<$arrlength;$x++){
+  	echo "<br>";
+  	echo $cars[$x];
+  }
+?>
+<!-- PHP 关联数组 -->
+<?php
+  $ages=array("张三"=>"20","李四"=>"25","王五"=>"35");
+  echo "<br>";
+  echo $ages['张三'];
+  foreach($ages as $x=>$x_value){
+  	echo "<br>";
+  	echo $x . $x_value;
+  }
+?>
+<!-- PHP - 数组排序函数
+在本章中，我们将一一介绍下列 PHP 数组排序函数：
+sort() - 对数组进行升序排列
+rsort() - 对数组进行降序排列
+asort() - 根据关联数组的值，对数组进行升序排列
+ksort() - 根据关联数组的键，对数组进行升序排列
+arsort() - 根据关联数组的值，对数组进行降序排列
+krsort() - 根据关联数组的键，对数组进行降序排列 -->
+<?php 
+	$cars=array("Volvo","BMW","Toyota");  
+	sort($cars);  
+	print_r($cars);
+?>
+
+<!-- PHP 超级全局变量
+PHP中预定义了几个超级全局变量（superglobals） ，这意味着它们在一个脚本的全部作用域中都可用。 你不需要特别说明，就可以在函数及类中使用。
+PHP 超级全局变量列表:
+$GLOBALS
+$_SERVER
+$_REQUEST
+$_POST
+$_GET
+$_FILES
+$_ENV
+$_COOKIE
+$_SESSION -->
+<?php
+  $x=20;
+  $y=80;
+  function addition(){
+  	$GLOBALS['z']=$GLOBALS['x']+$GLOBALS['y'];
+  }
+  addition();
+  echo "<br>";
+  echo $z;
+?>
+<!-- $_SERVER -->
+<?php 
+	echo $_SERVER['PHP_SELF'];
+	echo "<br>";
+	echo $_SERVER['SERVER_NAME'];
+	echo "<br>";
+	echo $_SERVER['HTTP_HOST'];
+	echo "<br>";
+	echo $_SERVER['HTTP_USER_AGENT'];
+	echo "<br>";
+	echo $_SERVER['SCRIPT_NAME'];
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!-- 调用公共尾部 before-->
 <?php include 'footer.php'; ?>
-<!-- 调用公共尾部 end
+<!-- 调用公共尾部 end-->
