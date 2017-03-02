@@ -11,14 +11,14 @@
   echo $name;
 ?>
 
-<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-	<input type="text" name="gname">
-	<input type="submit">
-</form>
+<!--<form method="post" action="--><?php //echo $_SERVER['PHP_SELF'];?><!--">-->
+<!--	<input type="text" name="gname">-->
+<!--	<input type="submit">-->
+<!--</form>-->
 <?php
-  $name=$_POST['gname'];
-  echo $name;
-?>
+//  $name=$_POST['gname'];
+//  echo $name;
+//?>
 <!-- 调用公共尾部 before-->
 <?php include 'footer.php'; ?>
 <!-- 调用公共尾部 end-->

@@ -7,9 +7,9 @@
 
 <?php 
   class myClass2{
-  	const constant='123456789';
+  	const constant='123456789ddd';
     function showConstant(){
-    	echo self::constant . PHP_EOL;
+    	echo self::constant . PHP_EOL;  
     }
   }
   echo myClass2::constant . PHP_EOL;

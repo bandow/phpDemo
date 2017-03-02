@@ -1,6 +1,6 @@
 <?php
 	$q=$_GET["q"];
-	$conn=mysqli_connect("localhost","root","","member");
+	$conn=mysqli_connect("localhost","sa","Ccinn@123456","HotelList01");
 
 	if(!$conn){
 		die("Error:".mysqli_error($conn));
@@ -15,7 +15,7 @@
 	// dbname	必需，规定要使用的默认数据库。
 	mysqli_select_db($conn,"ajax_demo");
 
-	$sql="SELECT * FROM User WHERE id='$q'";
+	$sql="SELECT * FROM Goods WHERE id='$q'";
 
 	$result=mysqli_query($conn,$sql);
 
